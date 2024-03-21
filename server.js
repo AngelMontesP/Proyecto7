@@ -1,4 +1,7 @@
 import { connect } from "./config.js";
+import express from 'express';
+import peliculaRoutes from "./routes/peliculaRoutes.js"
+
 connect();
 
 const api = express();
@@ -10,5 +13,5 @@ api.listen(8000, ()=>{
     console.log('Api corriendo en el puerto 8000')
 });
 
-
+api.use('/peliculas', peliculaRoutes);
 

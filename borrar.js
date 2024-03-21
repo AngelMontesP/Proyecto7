@@ -1,23 +1,21 @@
-
-import { connect } from './config.js';
 import express from 'express';
-import carRoutes from './routes/carRoutes.js';
-import bookRoutes from './routes/bookRoutes.js';
+import {
+  createCar,
+  getAllCars,
+  getCarById,
+  updateCar,
+  deleteCar,
+} from '../controllers/carController.js';
 
-connect();
+const carRoutes = express.Router();
 
-const api = express();
+carRoutes.route('/').post(createCar).get(getAllCars);
+carRoutes.route('/:carId').get(getCarById).put(updateCar).delete(deleteCar);
 
-api.use(express.json());
+// carRoutes.post('/', createCar);
+// carRoutes.get('/', getAllCars);
+// carRoutes.get('/:carId', getCarById);
+// carRoutes.put('/:carId', updateCar);
+// carRoutes.delete('/:carId', deleteCar);
 
-api.listen(8000, () => {
-  console.log('API corriendo en puerto 8000');
-});
-
-//String (nombre de la ruta)
-api.get('/test', (req, res) => {
-  res.send('Hola es to es una prueba desde terminal');
-});
-
-api.use('/cars', carRoutes);
-api.use('/books', bookRoutes);
+export default carRoutes;
