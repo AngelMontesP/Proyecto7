@@ -13,15 +13,4 @@ const createPelicula = async  (req, res) => {
   }  
 };
 
-// /// POST EN  http://localhost:8000/peliculas
-// {
-//   "nombre": "Pelicula",
-//   "director": "Angel Montes",
-//   "fechaDeLanzamiento": 2010, 
-//   "calificacion": "A",
-//   "duracion": 120,
-//   "genero": "Terror"
-// }
-///
-
 export {createPelicula};
