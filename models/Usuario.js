@@ -19,7 +19,6 @@ const usuarioSchema = new mongoose.Schema({
     },
     rol:{
         type: String,  
-        required: true,
         default:"Usuario",
     },
     telefono:{
@@ -27,10 +26,6 @@ const usuarioSchema = new mongoose.Schema({
         required: true,
     },
     correo:{
-        type: String,  
-        required: true,
-    },
-    DNI:{
         type: String,  
         required: true,
     },

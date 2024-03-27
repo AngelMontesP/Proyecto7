@@ -1,6 +1,8 @@
 import { connect } from "./config.js";
 import express from 'express';
 import peliculaRoutes from "./routes/peliculaRoutes.js"
+import usuarioRoutes from './routes/usuarioRoutes.js'
+import boletoRoutes from "./routes/boletoRoutes.js";
 
 connect();
 
@@ -14,4 +16,5 @@ api.listen(8000, ()=>{
 });
 
 api.use('/peliculas', peliculaRoutes);
-
+api.use('/usuarios', usuarioRoutes);
+api.use('/boletos', boletoRoutes);
