@@ -23,7 +23,8 @@ const getBoletos = async (req,res) =>{
             error,
         })
     }
-}
+};
+
 
 
 export {createBoleto, getBoletos};

@@ -1,3 +1,4 @@
+import Boleto from "../models/Boleto.js";
 import Usuario from "../models/Usuario.js";
 
 const createUsuario = async (req, res) => {
@@ -23,5 +24,6 @@ const getUsuarios = async (req, res) => {
     });
   }
 };
+
 
 export { createUsuario, getUsuarios};

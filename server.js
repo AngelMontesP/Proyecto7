@@ -15,6 +15,6 @@ api.listen(8000, ()=>{
     console.log('Api corriendo en el puerto 8000')
 });
 
-api.use('/peliculas', peliculaRoutes);
 api.use('/usuarios', usuarioRoutes);
 api.use('/boletos', boletoRoutes);
+api.use('/peliculas', peliculaRoutes);

@@ -13,4 +13,17 @@ const createPelicula = async  (req, res) => {
   }  
 };
 
-export {createPelicula};
+const getPeliculas = async (req,res) =>{
+
+  try {
+      const todosPeliculas = await Pelicula.find();
+      res.json(todosPeliculas);
+  } catch (error) {
+      res.status(500).json({
+          msg:"Error al obtener todas las peliculas",
+          error,
+      })
+  }
+};
+
+export {createPelicula, getPeliculas};
