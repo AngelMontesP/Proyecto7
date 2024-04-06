@@ -15,7 +15,7 @@ try {
 const getBoletos = async (req,res) =>{
 
     try {
-        const todosBoletos = await Boleto.find();
+        const todosBoletos = await Boleto.find().populate('pelicula').populate('cliente');
         res.json(todosBoletos);
     } catch (error) {
         res.status(500).json({

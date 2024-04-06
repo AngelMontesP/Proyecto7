@@ -25,6 +25,12 @@ const peliculaSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    datopeli: [
+        {
+          type: mongoose.Schema.Types.ObjectId,
+          ref: 'Peli',
+        },
+    ],
 })
 
 export default mongoose.model('Pelicula', peliculaSchema);
